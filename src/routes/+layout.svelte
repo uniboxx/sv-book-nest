@@ -1,11 +1,10 @@
 <script lang="ts">
+	import { Footer, Header } from '$components';
 	import '../app.css';
 
 	const { children } = $props();
 </script>
 
-
-
-{#if children}
-	{@render children()}
-{/if}
+<Header />
+{@render children()}
+<Footer />
