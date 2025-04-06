@@ -12,8 +12,9 @@
 		onclick?: never;
 	}
 	interface ButtonProps extends BasicProps {
-		onclick: (e: MouseEvent) => void;
+		onclick?: (e: MouseEvent) => void;
 		href?: never;
+		type?: 'submit' | 'reset' | 'button';
 	}
 	type Props = ButtonProps | LinkProps;
 	const { children, href, isSecondary, isDanger, isMenu, ...props }: Props = $props();

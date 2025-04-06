@@ -8,3 +8,4 @@ export { default as HeroSection } from './sections/HeroSection.svelte';
 
 //- UI
 export { default as Button } from './UI/Button.svelte';
+export { default as AuthForm } from './UI/AuthForm.svelte';
