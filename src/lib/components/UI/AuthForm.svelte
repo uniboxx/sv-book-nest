@@ -1,16 +1,23 @@
 <script lang="ts">
 	import { Button } from '$components';
+	import type { ActionData } from '../../../routes/register/$types';
 
 	interface Props {
 		isRegistration?: boolean;
+		form: ActionData;
 	}
-	const { isRegistration }: Props = $props();
+	const { isRegistration, form }: Props = $props();
 </script>
 
 <div class="default-margin auth-container">
 	<h1 class="mb-l">{isRegistration ? 'Register' : 'Login'}</h1>
 	<div class="form-and-social-login">
-		<form class="auth-form">
+		<form class="auth-form" method="POST">
+			{#if form?.errors?.length}
+				{#each form.errors as error}
+					<p class="auth-error">{error}</p>
+				{/each}
+			{/if}
 			{#if isRegistration}
 				<input type="text" placeholder="Name" name="name" />
 			{/if}
